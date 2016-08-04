@@ -669,7 +669,10 @@
             } else if (typeof scope.sortableScope.options.placeholder === 'string') {
               return angular.element(scope.sortableScope.options.placeholder);
             } else {
-              return angular.element($document[0].createElement(itemScope.element.prop('tagName')));
+              // AM - Instead of creating a new element, clone the element we are using so we can see the row we are dragging as the place holder.
+              //var element = angular.element($document[0].createElement(itemScope.element.prop('tagName')));
+              var element = angular.element(itemScope.element[0]).clone();
+              return element;
             }
           };
 
@@ -793,6 +796,8 @@
               // add hidden placeholder element in original position.
               scope.itemScope.element.after(placeElement);
               // not cloning, so use the original element.
+              // AM - hide the drag element sit is already visible in the placeholder.
+              dragElement.addClass('as-sortable-hidden');
               dragElement.append(scope.itemScope.element);
             }
 

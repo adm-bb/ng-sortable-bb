@@ -2,8 +2,11 @@
 /* Mandatory CSS required for ng-sortable */
 /* ************************************** */
 
-.as-sortable-item, .as-sortable-placeholder {
-    display: block;
+.as-sortable-item,
+.as-sortable-placeholder {
+    min-height: 20px;
+    margin: 1px 2px 5px 1px;
+    border-radius: 10px;
 }
 
 .as-sortable-item {
@@ -20,6 +23,11 @@
 }
 
 .as-sortable-placeholder {
+    border: 2px dashed darkgrey;
+    box-sizing: border-box;
+    background-color: lightgray!important;
+    opacity: 0.9;
+    color: black;
 }
 
 .as-sortable-drag {
