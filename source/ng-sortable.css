@@ -1,5 +1,9 @@
 /* ************************************** */
+
+
 /* Mandatory CSS required for ng-sortable */
+
+
 /* ************************************** */
 
 .as-sortable-item,
@@ -34,6 +38,10 @@
     position: absolute;
     pointer-events: none;
     z-index: 9999;
+}
+
+.as-sortable-dragging {
+    display: none;
 }
 
 .as-sortable-hidden {
