@@ -1,6 +1,6 @@
 {
     "name": "ng-sortable-bb",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "homepage": "https://github.com/adm-bb/ng-sortable-bb",
     "author": "Adm BB <https://github.com/a5hik>",
     "description": "Angular Library for Drag and Drop, supports Sortable and Draggable. Based on https://github.com/a5hik/ng-sortable",

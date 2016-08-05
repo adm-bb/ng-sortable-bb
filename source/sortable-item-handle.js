@@ -491,7 +491,14 @@
               scope.sortableScope.$apply(function () {
                 if (dragItemInfo.isSameParent()) {
                   if (dragItemInfo.isOrderChanged()) {
+                    $('.rowMoved').removeClass('rowMoved');
+                    angular.element(dragItemInfo.source.element[0]).addClass('rowMoved');
                     scope.callbacks.orderChanged(dragItemInfo.eventArgs());
+                    var item = angular.element(dragItemInfo.source.element[0]);
+                    
+                    $(item[0]).on('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function() {
+                      item.removeClass('rowMoved');
+                    });
                   }
                 } else {
                   scope.callbacks.itemMoved(dragItemInfo.eventArgs());
